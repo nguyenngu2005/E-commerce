@@ -38,10 +38,3 @@ CREATE TABLE order_items (
     quantity INT,
     price_unit DECIMAL(10, 2)
 );
-
--- Test Insert 
-CREATE TABLE test_insert (
-    id SERIAL PRIMARY KEY,
-    username VARCHAR(50),
-    email VARCHAR(100)
-);
