@@ -47,6 +47,15 @@ Hệ thống ưu tiên **Hiệu suất ghi (Write-Throughput)** và **Khả năn
 | `order_date` | TIMESTAMP | **Partition Key** - Thời điểm đặt hàng |
 | `total_amount` | DECIMAL(10,2) | Tổng giá trị đơn hàng |
 
+Bảng: order_items (Fact Table - Granular Level)
+| Column       | Type          | Description                          |
+| ------------ | ------------- | ------------------------------------ |
+| `item_id`    | SERIAL (PK)   | Định danh duy nhất của dòng hàng     |
+| `order_id`   | INT           | Tham chiếu logic đến bảng `orders`   |
+| `product_id` | INT           | Tham chiếu logic đến bảng `products` |
+| `quantity`   | INT           | Số lượng sản phẩm trong đơn hàng     |
+| `price_unit` | DECIMAL(10,2) | Giá của sản phẩm tại thời điểm mua   |
+
 ---
 
 ## 4. Chiến lược Phân vùng (Partitioning Strategy)
